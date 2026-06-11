@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "email": null,
+    "phone": null,
+    "password_hash": "$2y$10$R.9gfmxzCor.5mGQaFzreeVxISFnn5i6u4iCbuCffjZjrZWeMyIRG",
+    "role": "admin",
+    "created_at": "2026-06-03T00:00:00Z"
+  }
+]

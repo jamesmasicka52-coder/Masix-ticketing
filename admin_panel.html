@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f5f7; }
+    .admin-container { max-width: clamp(900px, 92vw, 1800px); margin: 24px auto; padding: 0 20px; }
+    .admin-card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); margin-bottom: 20px; }
+    h1, h2 { margin-top: 0; }
+    .button { display: inline-flex; align-items: center; justify-content: center; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer; text-decoration: none; font-weight: 600; }
+    .button.primary { background: #2563eb; color: #fff; }
+    .button.secondary { background: #e5e7eb; color: #111827; }
+    .button.danger { background: #ef4444; color: #fff; }
+    .button:hover { opacity: 0.9; }
+    .header-actions { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+    label { display: block; margin: 14px 0 6px; font-weight: 600; }
+    input[type="text"], input[type="password"], select {
+      width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 8px; box-sizing: border-box;
+    }
+    .hint { font-size: 13px; color: #6b7280; margin-top: 6px; line-height: 1.35; }
+    table { width: 100%; border-collapse: collapse; margin-top: 14px; }
+    th, td { border: 1px solid #e5e7eb; padding: 12px 14px; text-align: left; vertical-align: top; }
+    th { background: #0f172a; color: #fff; font-weight: 600; }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; align-items: center; }
+    .message { padding: 14px 16px; border-radius: 8px; margin-top: 8px; margin-bottom: 14px; background: #fef3c7; color: #92400e; }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <div class="admin-card">
+      <div class="header-actions">
+        <div>
+          <h1 style="margin:0;">Admin Panel</h1>
+          <p class="hint" style="margin:6px 0 0 0;">This is an HTML fallback page so the admin button can open something even if PHP restrictions block access.</p>
+        </div>
+        <div style="display:flex; gap:10px;">
+          <a class="button secondary" href="adminpanel.php">Back to Admin Panel</a>
+          <a class="button secondary" href="logout.php">Logout</a>
+        </div>
+      </div>
+      <div class="message">
+        PHP-based admin features still require server-side auth/role checks. Use the buttons below to open the actual PHP endpoints.
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="admin-card">
+        <h2>Create New User</h2>
+        <p class="hint">Opens the real PHP endpoint in a new page.</p>
+        <div class="actions">
+          <a class="button primary" href="adminpanel.php">Open Admin PHP Panel</a>
+        </div>
+      </div>
+
+      <div class="admin-card">
+        <h2>Delete User</h2>
+        <p class="hint">Use the real PHP actions for managing users.</p>
+        <div class="actions">
+          <a class="button danger" href="admin_delete_user.php">Go to Delete Endpoint</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-card">
+      <h2>Helpful Links</h2>
+      <div class="actions" style="margin-top: 10px;">
+        <a class="button secondary" href="admin_save_user.php">Create User Endpoint</a>
+        <a class="button secondary" href="admin_diagnostic.php">Diagnostics</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
